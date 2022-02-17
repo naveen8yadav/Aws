@@ -1,0 +1,12 @@
+---
+ - name: Stop ec2 instance
+   hosts: localhost
+   connection: local
+   gather_facts: false
+   tasks:
+     - name: stop ec2 instance
+       ec2:
+         instance_ids: i-04600043035adbf26
+         region: ap-south-1
+         state: stopped
+         wait: yes
