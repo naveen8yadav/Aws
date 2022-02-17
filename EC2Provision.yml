@@ -19,7 +19,7 @@
 
      - name: Task # 1 - Create my security group
        local_action: 
-         module: ec2_group
+         module: amazon.aws.ec2
          name: "{{ security_group }}"
          description: Security Group for webserver Servers
          region: "{{ region }}"
