@@ -6,8 +6,8 @@
    tags: provisioning
 
    vars:
-     keypair: awsdemovm
-     instance_type: t2.micro
+     key_name: "awsdemovm"
+     instance_type: "t2.micro"
      image: ami-020db2c14939a8efb
      wait: yes
      group: webserver
@@ -36,10 +36,7 @@
               from_port: 80
               to_port: 80
               cidr_ip: 0.0.0.0/0
-         rules_egress:
-            - proto: all
-              cidr_ip: 0.0.0.0/0
-       register: basic_firewall
+         
      - name: Task # 2 Launch the new EC2 Instance
        local_action:  ec2 
                       group={{ security_group }} 
