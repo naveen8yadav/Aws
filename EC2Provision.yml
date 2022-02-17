@@ -6,14 +6,14 @@
    tags: provisioning
 
    vars:
-     keypair: MyEC2Key
+     keypair: awsdemovm
      instance_type: t2.small
      image: ami-020db2c14939a8efb
      wait: yes
      group: webserver
      count: 1
      region: us-east-2
-     security_group: my-jenkins-security-grp
+     security_group: ansible_demo
    
    tasks:
 
